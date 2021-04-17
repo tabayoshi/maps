@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::resource('/', 'MapController');
+// Route::post('/', 'MapController@store')->name('store');
+Route::get('/', 'MapController@index')->name('index');
+
+Route::get('/add', 'AddController@index')->name('index');
+Route::post('/add', 'AddController@store')->name('store');

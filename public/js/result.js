@@ -18,4 +18,12 @@ function initMap() {
         map: mapObj,
         title: '三和電気土木工事',
     });
+
+    // マーカーの吹き出し
+    infoWindow = new google.maps.InfoWindow({ //吹き出しの追加
+        content: '<div class="map">三和電機土木工事</div>' // 吹き出しに対する内容
+    });
+    marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+    });
 }
